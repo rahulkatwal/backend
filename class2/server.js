@@ -12,8 +12,18 @@ const notes = [];
 app.post("/notes", (req,res)=>
 {
     console.log(req.body);
+
+    // using push method to add the req.body to notes array
+    notes.push(req.body);
     // push the req.body to notes array
     res.send('notes created successfully');
+})
+
+// use get method to fetch notes api
+app.get ("/notes",(req,res)=>
+{
+    // send the notes array as response
+    res.send(notes);
 })
 
 
